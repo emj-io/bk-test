@@ -4,3 +4,10 @@ steps:
     artifact_paths: "artifacts/*"
     agents:
       queue: "${BUILDKITE_AGENT_META_DATA_QUEUE:-default}"
+
+steps:
+  - label: ":partyparrot:"
+    command: "ps aux"
+    plugins:
+      - docker#v3.12.0:
+          image: "bash:latest"
