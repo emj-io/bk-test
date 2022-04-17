@@ -3,7 +3,7 @@ steps:
     command: "script.sh"
     artifact_paths: "artifacts/*"
   - label: ":partyparrot:"
-    command: 'echo "${BASH_VERSION}'
+    command: 'echo "${BASH_VERSION}"'
     plugins:
       - docker#v3.12.0:
           image: "bash:latest"
