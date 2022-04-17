@@ -2,12 +2,12 @@ steps:
   - label: ":hammer: Example Script"
     command: "script.sh"
     artifact_paths: "artifacts/*"
-    agents:
-      queue: "${BUILDKITE_AGENT_META_DATA_QUEUE:-default}"
-
-steps:
   - label: ":partyparrot:"
-    command: "docker version; docker ps"
+    command: 'echo "${BASH_VERSION}'
     plugins:
       - docker#v3.12.0:
           image: "bash:latest"
+  - label: ":docker: Build"
+    plugins:
+      - docker-compose#v3.9.0:
+          build: app
