@@ -7,7 +7,7 @@ steps:
 
 steps:
   - label: ":partyparrot:"
-    command: "ps aux"
+    command: "docker version; docker ps"
     plugins:
       - docker#v3.12.0:
           image: "bash:latest"
