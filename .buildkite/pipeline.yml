@@ -2,12 +2,14 @@ steps:
   - label: ":hammer: Example Script"
     command: "script.sh"
     artifact_paths: "artifacts/*"
-  - label: ":partyparrot:"
-    command: 'echo "${BASH_VERSION}"'
+  - label: ":partyparrot: Docker with shell command"
+    command: 'docker -v; ps'
     plugins:
       - docker#v3.12.0:
           image: "bash:latest"
-  - label: ":docker: Build"
+  - label: ":docker: Compose"
     plugins:
       - docker-compose#v3.9.0:
           build: app
+  - label: ":catscream: Shell command no docker"
+    command: 'docker -v; ps'
